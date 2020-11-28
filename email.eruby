@@ -1,0 +1,12 @@
+From: <%= @admin_name %> <<%= @admin_email %>>
+To: <%= @to_name %> <<%= @to_email %>>
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Subject: <%= @subject %>
+
+Bonjour <%= @to_name %>,
+
+<p>Deuxième tirage suite à un bug</p>
+<p>Le programme de l'ami mystère te dévoile à qui tu offriras un cadeau.</p>
+<p>Le nom est : <b><%= @friend %></b></p>
+<p>Sincèrement, l'ordinateur</p>

@@ -1,0 +1,19 @@
+---
+admin:
+  name: Programme de Xavier
+  mail: cthulhu14@hotmail.com
+mailconfig:
+  subject: Ami mystère Noël 2020
+list:
+  - name: Xavier
+    lover: Astrid
+    mail: xav@mail.com
+  - name: Astrid
+    lover: Xavier
+    mail: astrid@domain.fr
+  - name: Catherine
+    lover: Frank
+    mail: catherine@truc.om
+  - name: Frank
+    lover: Catherine
+    mail: franck@bidule.fr
