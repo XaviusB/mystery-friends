@@ -1,0 +1,47 @@
+:root { --accent: #1f6fb2; --accent-2: #2e8b57; --bg: #eef8f1; --card: #fff; --muted: #777; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: var(--bg); color: #222; }
+#bg-video { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; pointer-events: none; }
+header, main { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) { #bg-video { display: none; } }
+header { background: linear-gradient(90deg, #1b5e3a, #2e8b57 50%, #1b5e3a); border-bottom: 4px solid #c0392b; padding: 1rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px #0005; }
+header select { width: auto; padding: .3rem; }
+.gift-btn { background: none; color: #fff; border: 0; box-shadow: none; margin: 0; padding: 0; font-size: 1.3rem; font-weight: 600; cursor: default; }
+.gift-btn:active { transform: none; box-shadow: none; }
+.confetti-canvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 20; }
+main { max-width: 640px; margin: 1.5rem auto; padding: 0 1rem; }
+.card { position: relative; background: linear-gradient(180deg, #fffdf7 0%, #fff8ee 100%); border: 2px solid #e8c77a; border-radius: 14px; padding: 1.4rem 1.25rem 1.25rem; margin-bottom: 1.1rem; box-shadow: 0 0 0 4px #c0392b22, 0 6px 18px #0004; overflow: hidden; }
+.card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; background: repeating-linear-gradient(-45deg, #c0392b 0 12px, #fff 12px 24px); }
+.card::after { content: "❄"; position: absolute; top: .5rem; right: .8rem; color: #e8c77a; font-size: 1.1rem; opacity: .8; }
+h1, h2 { margin-top: 0; font-family: Georgia, 'Times New Roman', serif; color: #8e1b10; }
+h1 { text-shadow: 0 1px 0 #fff; }
+label { display: block; margin: .6rem 0 .2rem; font-weight: 600; }
+input, select { width: 100%; padding: .55rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+button { background: linear-gradient(180deg, #d9413a, #a52a20); color: #fff; border: 0; border-radius: 999px; padding: .6rem 1.1rem; font-size: 1rem; cursor: pointer; margin-top: .8rem; box-shadow: 0 3px 0 #6e1810, 0 4px 8px #0003; }
+button:active { transform: translateY(2px); box-shadow: 0 1px 0 #6e1810; }
+button.secondary { background: linear-gradient(180deg, #3aa36a, #1f6b43); box-shadow: 0 3px 0 #123f28, 0 4px 8px #0003; }
+button.small { padding: .2rem .6rem; margin: 0; font-size: .85rem; }
+button:disabled { opacity: .5; cursor: default; }
+ul { list-style: none; padding: 0; margin: 0; }
+li { display: flex; justify-content: space-between; align-items: center; gap: .5rem; padding: .4rem 0; border-bottom: 1px solid #eee; }
+.row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.row button { margin-top: 0; }
+.warn { position: relative; background: linear-gradient(180deg, #fff6e0, #fdeccc); border: 2px dashed #c0392b; border-radius: 12px; padding: .75rem 2.2rem .75rem .75rem; margin: .8rem 0; box-shadow: 0 3px 10px #0002; }
+.warn p { margin: .3rem 0; }
+.warn-close { position: absolute; top: .2rem; right: .3rem; background: none; color: #8e1b10; box-shadow: none; margin: 0; padding: .1rem .5rem; font-size: 1.4rem; line-height: 1; border-radius: 6px; }
+.error { color: #b00020; margin-top: .6rem; }
+.muted { color: var(--muted); font-size: .9rem; }
+.link { display: flex; gap: .4rem; margin: .3rem 0 .8rem; }
+.link input { font-family: monospace; font-size: .85rem; }
+.link button { margin: 0; white-space: nowrap; }
+.target { font-size: 2rem; text-align: center; padding: 1rem; color: #1b5e3a; font-weight: 700; font-family: Georgia, 'Times New Roman', serif; background: repeating-linear-gradient(45deg, #1b5e3a0d 0 10px, transparent 10px 20px); border: 2px solid #e8c77a; border-radius: 12px; }
+button.danger { background: linear-gradient(180deg, #7b1c12, #4f0f08); box-shadow: 0 3px 0 #2a0604; }
+dialog.modal { border: 3px solid #c0392b; border-radius: 14px; padding: 1.5rem; width: min(92vw, 420px); background: #fffdf7; box-shadow: 0 0 0 6px #1b5e3a55, 0 8px 30px #0006; }
+dialog.modal::backdrop { background: #0008; }
+.modal-actions { justify-content: flex-end; }
+@media (max-width: 600px) {
+  li.person { flex-wrap: wrap; }
+  li.person > span:first-child { flex: 1 1 100%; font-weight: 600; }
+  li.person .row { width: 100%; justify-content: flex-start; }
+  li.person .row button.small { padding: .35rem .7rem; }
+}

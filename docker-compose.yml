@@ -1,0 +1,25 @@
+services:
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: mystery_friends
+      MYSQL_USER: mystery
+      MYSQL_PASSWORD: ${DB_PASSWORD:-mystery}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "127.0.0.1:3306:3306"
+  web:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PASSWORD: ${DB_PASSWORD:-mystery}
+    ports:
+      - "3000:3000"
+volumes:
+  dbdata:
